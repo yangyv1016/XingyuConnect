@@ -1,6 +1,10 @@
-# 星语互联
+<p align="center">
+  <img src="assets/branding/logo-full.png" width="360" alt="AstraTaleStudio 工作室 Logo">
+</p>
 
-<img src="assets/branding/logo-icon.png" width="80" alt="星语互联图标">
+<p align="center"><strong>本项目为 AstraTaleStudio 作品</strong></p>
+
+# 星语互联
 
 让 Android 手机与 Windows 电脑通过 USB 或 Wi-Fi 协作。图形化选设备、投屏和操控，也能传文件、看相册，并让手机播放电脑声音。
 
