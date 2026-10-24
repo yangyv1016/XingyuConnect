@@ -38,6 +38,6 @@
 
 ## 第三方组件
 
-核心投屏基于 [scrcpy](https://github.com/Genymobile/scrcpy)，传音基于 [AudioShare](https://github.com/ysbing/AudioShare)，中文输入使用 [ADBKeyboard](https://github.com/senzhk/ADBKeyBoard)。许可与对应源码说明见 [第三方声明](第三方声明.md)。本项目不属于华为或小米官方产品。
+核心投屏基于 [scrcpy](https://github.com/Genymobile/scrcpy)，传音基于 [AudioShare](https://github.com/ysbing/AudioShare)，中文输入使用 [ADBKeyboard](https://github.com/senzhk/ADBKeyBoard)。许可与对应源码说明见 [第三方声明](第三方声明.md)。
 
 VB-CABLE 由 [VB-Audio](https://vb-audio.com/Cable/) 提供，是捐赠软件，欢迎[支持作者或购买许可](https://vb-audio.com/Services/licensing.htm)。驱动保持原包，由官方图形安装器安装。
