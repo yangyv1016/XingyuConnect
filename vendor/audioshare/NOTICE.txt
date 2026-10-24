@@ -1,0 +1,49 @@
+AudioShare v2.2.2 — third-party components reused by XingyuConnect
+
+Project: https://github.com/ysbing/AudioShare
+Release: https://github.com/ysbing/AudioShare/releases/tag/v2.2.2
+Source revision: 7bfbe9f120dcb87be491dc4bddd9849b7d3f1e82
+License: LGPL-3.0-or-later (LICENSE); underlying GPL v3 text: COPYING.GPL3
+
+audio_capture.dll and server are copied UNMODIFIED from the official Windows
+release. The host loads audio_capture_xingyu.dll, an LGPL extension accepting a
+WASAPI endpoint ID and binding the ADB listener only to localhost. PCM conversion,
+framing and Android playback are unchanged. Modified source is in source/.
+AudioShare-v2.2.2-source.zip contains the complete original source tree at the
+revision above, including native capture sources, Android receiver, Gradle and
+CMake configuration, packaging scripts and original documentation.
+
+Release archive: audioshare-2.2.2-win.7z
+SHA-256: 3e52c9fd4af06d0acd0fad6854c14606d2013865ac98e5f7ca3fad040c0330d2
+audio_capture.dll SHA-256:
+aec8182d8a71642da0686b53c52123b67441a4e8572c9399a0396279a8cbfc35
+server SHA-256:
+452976082ff36bf7f240c3dc0e7dc3c53ae2a5266980de090e047a9b47d4eeef
+
+The host dynamically loads audio_capture_xingyu.dll and uses its C exports.
+No upstream capture, conversion, PCM framing or Android playback is reimplemented.
+You may replace the DLL and server with ABI/protocol-compatible builds. They are
+ordinary files outside the XingyuConnect executable. Debugging modifications to
+these LGPL components is permitted by the application distributor.
+
+Build the upstream project following docs/README.zh-CN.md in the source archive:
+Windows capture: Flutter 3.x and Visual Studio 2022 Desktop C++ workload;
+  cd client; flutter pub get; flutter gen-l10n; flutter build windows --release
+Android receiver: JDK and Android SDK; ./gradlew :server:assembleRelease
+See client/native/audio_capture.cpp and server/src/main/java/com/ysbing/audioshare/.
+
+Build the extension in the project with Zig 0.13.0 (x86_64 Windows):
+  native/audioshare/build.ps1 -ZigPath C:\path\to\zig.exe
+The output is vendor/audioshare/audio_capture_xingyu.dll.
+Using the distributed source/ folder, run this command there (one line):
+  zig c++ audio_capture.cpp -shared -target x86_64-windows-gnu -O2 -std=c++17 -fms-extensions -static -lws2_32 -lole32 -lwinmm -luuid -o ../audio_capture_xingyu.dll
+The full repository also includes native/audioshare/build.ps1 for developers.
+The replaceable extension is LGPL-3.0-or-later.
+Zig 0.13.0 Windows archive SHA-256:
+d859994725ef9402381e557c60bb57497215682e355204d754ee3df75ee3c158
+Runtime/compiler licenses are in ../licenses/AudioShare-Native-*.
+
+The msvcp140*.dll and vcruntime140*.dll runtime files are copied unchanged from
+the same release and remain Microsoft Visual C++ runtime components. Their
+copyrights and licensing are not replaced by the AudioShare license.
+

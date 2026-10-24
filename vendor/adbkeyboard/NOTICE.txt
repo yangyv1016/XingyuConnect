@@ -1,0 +1,17 @@
+ADBKeyboard / ADBKeyBoard
+Upstream: https://github.com/senzhk/ADBKeyBoard
+Release/tag: v2.5-dev
+APK (unmodified): https://github.com/senzhk/ADBKeyBoard/releases/download/v2.5-dev/keyboardservice-debug.apk
+Bundled filename: ADBKeyboard.apk
+SHA-256: 41A8A0996D7397A2390D1CA16A75CB66C4A7BDAA89CF4E63600A4D3FB346FBBB
+Corresponding source (unmodified): https://github.com/senzhk/ADBKeyBoard/archive/refs/tags/v2.5-dev.zip
+Bundled source archive: source-v2.5-dev.zip (includes Gradle project and upstream build files)
+License: GPL-2.0; full text in LICENSE.
+Downloaded: 2026-10-24.
+
+XingyuConnect installs this separate Android package only when its IME service is absent.
+An existing installed ADBKeyboard is reused, not automatically replaced.
+Text uses ADB_INPUT_B64 and UTF-8 Base64. Keys use ADB_INPUT_CODE,
+or the upstream ADB_INPUT_TEXT mcode format for modifier keys.
+Broadcasts explicitly target com.android.adbkeyboard.
+No upstream APK or Java source modifications were made.

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationDefaultFont>Microsoft YaHei UI, 9.5pt</ApplicationDefaultFont>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationManifest>..\..\src\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\*.cs" Exclude="..\..\src\Program.cs" />
+    <EmbeddedResource Include="..\..\assets\branding\logo-icon.png" LogicalName="XingyuConnect.Branding.logo-icon.png" />
+    <EmbeddedResource Include="..\..\assets\branding\app.ico" LogicalName="XingyuConnect.Branding.app.ico" />
+    <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
+    <PackageReference Include="AdvancedSharpAdbClient" Version="3.6.16" />
+  </ItemGroup>
+</Project>
